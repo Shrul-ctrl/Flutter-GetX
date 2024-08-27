@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 
@@ -24,10 +24,26 @@ class HomeView extends GetView<HomeController> {
               'HomeView is working',
               style: TextStyle(fontSize: 20),
             ),
-            ElevatedButton(onPressed: () {
-              Get.toNamed('/counter');
-            }, 
-            child: Text('conter Page'),
+             SizedBox(height: 15),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.toNamed('/counter');
+                    },
+                    child: Text('conter Page'),
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.toNamed('/biodata');
+                    },
+                    child: Text('biodata Page'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

@@ -1,9 +1,10 @@
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/counter_controller.dart';
-
 
 class CounterView extends GetView<CounterController> {
   const CounterView({super.key});
@@ -14,7 +15,8 @@ class CounterView extends GetView<CounterController> {
         title: const Text('CounterView'),
         centerTitle: true,
       ),
-      body: Center( //const hapus
+      body: Center(
+        //const hapus
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -22,34 +24,31 @@ class CounterView extends GetView<CounterController> {
             Obx(
               () => Text(controller.bilangan.toString()),
             ),
-                    Container(
-            padding: EdgeInsets.all(1.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-               
-            ElevatedButton(
-              onPressed: () {
-                controller.tambahSatu();
-              },
-              child: Icon(Icons.add),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {
+                      controller.kurangSatu();
+                    },
+                    child: Icon(Icons.remove),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      controller.tambahSatu();
+                    },
+                    child: Icon(Icons.add),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      controller.resetSatu();
+                    },
+                    child: Icon(Icons.cached),
+                  ),
+                ],
+              ),
             ),
-                ElevatedButton(
-              onPressed: () {
-                controller.kurangSatu();
-              },
-              child: Icon(Icons.remove),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                controller.resetSatu();
-              },
-              child: Icon(Icons.cached),
-            ),
-              ],
-            ),
-          ),
-           
           ],
         ),
       ),

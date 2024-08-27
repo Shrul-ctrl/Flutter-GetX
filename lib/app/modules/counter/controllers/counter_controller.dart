@@ -23,6 +23,8 @@ class CounterController extends GetxController {
   }
 
   void resetSatu() {
+     Get.snackbar('Warning', 'Berhasil Di Reset',
+          snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.amber);
     bilangan.value = 0;
   }
 }
